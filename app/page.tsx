@@ -1,27 +1,15 @@
-"use client";
-import { useState, useEffect } from "react";
-export default function Home() {
-  const [cont, setCont] = useState(0);
-  function x() {
-    if(cont>= 50){
-      return "🤍"
-    }else{
-      return cont
-    }
-  }
-  useEffect(() => {
+'use client';
 
-    const interval = setInterval(() => {    //delay di mezzo secondo 
-      console.log(cont)
-      if(cont<50){
-        setCont(cont+1)     //incrementa
-      }else{
-        clearInterval(interval)
-      }
-       
-    }, 10);
-  
-    return () => clearInterval(interval);     //perche si 
-  }, [cont]);
-  return <>{x()}</>;
+import Cont from "./components/cont";
+
+export default function Home() {
+  return (
+    <div>
+        <Cont /> 
+        {/*! qui stai chiamando il componente cont, importato dalla cartella componenti, come gia detto 
+          react e family si basano su componenti, ovvero "funzioni che ritornano html"
+        
+        */}
+    </div>
+  );
 }
