@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [cont, setCont] = useState(0);
@@ -13,7 +13,9 @@ export default function Home() {
     const interval = setInterval(() => {
       console.log(cont); // console.log per vedere il contatore
       if (cont < 10000) {
-        setCont(prevCont => prevCont + getRand());// incrementa contatore
+        setCont(i => i + getRand());// incrementa contatore
+      }else{
+        clearInterval(interval); 
       }
     }, 1);
 
@@ -23,15 +25,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-row gap-3 text-center">
-        <Avatar>
-          <AvatarImage src="/pfp.jpg"/>
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
-        Mattiarotelli
-      </div>
-
-      <div className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 justify-center text-center flex flew-row">
+      <Navbar/>
+      <div className=" pb-2 text-3xl font-semibold tracking-tight first:mt-0 justify-center text-center flex flew-row">
         Quanto ti amo: {x()}
       </div>
     </div>
