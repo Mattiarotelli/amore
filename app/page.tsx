@@ -24,10 +24,11 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-col">
-      <div className=" pb-2 text-3xl font-semibold tracking-tight first:mt-0 justify-center text-center flex flew-row">
-        Quanto ti amo: {x()}
+      <div className="flex flex-col">
+        <div className="text-3xl font-semibold tracking-tight w-full first:mt-10 text-center">
+          Quanto ti amo: {x()}
+        </div>
       </div>
-    </div>
+    
   );
 }
