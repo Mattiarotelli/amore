@@ -18,6 +18,7 @@ export default function Layout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Navbar/>
         {children}
       </body>
     </html>
